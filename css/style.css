@@ -24,64 +24,43 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
-.slide1 {
-    background-image: url(../img/jason1.jpg);
-}
-
-.slide2 {
-    background-image: url(../img/jason2.jpg);
-}
-
-.slide3 {
-    background-image: url(../img/jason3.jpg);
-}
-
-.slide4 {
-    background-image: url(../img/jason4.jpg);
-}
-
-.slide5 {
-    background-image: url(../img/jason5.jpg);
-}
-
 .wrapper .controls {
-    left: 50%;
-    margin-left: -98px;
+    left: 80%;
+    margin-left: -100px;
     position: absolute;
 }
 
 .wrapper label {
     cursor: pointer;
     display: inline-block;
-    height: 8px;
+    height: 15px;
     margin: 25px 12px 0 16px;
     position: relative;
-    width: 8px;
+    width: 15px;
     border-radius: 50%;
+
 }
 
 .wrapper label:after {
-    border: 2px solid white;
+    border: 2px solid dodgerblue;
     content: " ";
     display: block;
     height: 12px;
-    left: -4px;
+    left: 0;
     position: absolute;
-    top: -4px;
+    top: 0;
     width: 12px;
     border-radius: 50%;
 }
 
-
-
-.wrapper label:hover,
-#slide1:checked~.controls label:nth-of-type(1),
-#slide2:checked~.controls label:nth-of-type(2),
-#slide3:checked~.controls label:nth-of-type(3),
-#slide4:checked~.controls label:nth-of-type(4),
-#slide5:checked~.controls label:nth-of-type(5) {
-    background: white;
+.wrapper label:hover {
+    background: dodgerblue;
+    background-color: dodgerblue;
+    color: dodgerblue;
 }
+
+
+
 
 .slides {
     height: inherit;
@@ -110,20 +89,33 @@ input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* Добавьте другие стили, которые вам нужны */
 }
+
+
 
 .titles {
     display: none;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: dodgerblue;
+    text-align: left;
+    padding-top: 20px;
 }
 
-#slide1:checked~.titles .title1,
-#slide2:checked~.titles .title2,
-#slide3:checked~.titles .title3,
-#slide4:checked~.titles .title4,
-#slide5:checked~.titles .title5 {
+#slide1:checked~.contitle .titles.title1,
+#slide2:checked~.contitle .titles.title2,
+#slide3:checked~.contitle .titles.title3,
+#slide4:checked~.contitle .titles.title4,
+#slide5:checked~.contitle .titles.title5 {
     display: block;
-    color: white;
-    /* Настройте цвет текста по вашему вкусу */
-    /* Другие стили для заголовков */
+}
+
+.contitle {
+    display: flex;
+}
+
+.titles {
+    flex: 1;
+    /* Занимает доступное пространство слева от кнопок */
 }
