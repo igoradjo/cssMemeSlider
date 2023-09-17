@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkslategrey;
+}
+
+.wrapper {
+    height: 350px;
+    margin: 100px auto 0;
+    position: relative;
+    width: 700px;
+}
+
+.slider {
+    background-color: dodgerblue;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.image {
+    width: 700px;
+    height: 350px;
+}
+
+.controls {
+    left: 70%;
+    margin-left: -100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.ctrl1 {
+    cursor: pointer;
+    height: 26px;
+    width: 26px;
+    position: relative;
+    margin: 0 5px;
+}
+
+.ctrl {
+    background: dodgerblue;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    width: 16px;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s;
+}
+
+.ctrl1:hover .ctrl {
+    background-color: white;
+    opacity: 1;
+}
+
+.ctrl1:hover {
+    background-color: transparent;
+}
+
+.ctrl1:hover .ctrl {
+    background-color: white;
+    opacity: 1;
+}
+
+.ctrl1:active .ctrl {
+    opacity: 0;
+}
+
+.slides {
+    height: inherit;
+    position: absolute;
+    width: inherit;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+#slide1:checked~.slider>.slide1,
+#slide2:checked~.slider>.slide2,
+#slide3:checked~.slider>.slide3,
+#slide4:checked~.slider>.slide4,
+#slide5:checked~.slider>.slide5 {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transform: scale(1);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.titles {
+    display: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+    padding-top: 20px;
+    opacity: 0;
+    transition: opacity 5s;
+}
+
+
+
+#slide1:checked~.contitle .titles.title1,
+#slide2:checked~.contitle .titles.title2,
+#slide3:checked~.contitle .titles.title3,
+#slide4:checked~.contitle .titles.title4,
+#slide5:checked~.contitle .titles.title5 {
+    display: block;
+    opacity: 1;
+    animation: fadein 5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.contitle {
+    display: flex;
+}
+
+.titles {
+    flex: 1;
+}
+
+
+
+
+@media (max-width: 376px) {
+
+    .wrapper {
+        width: 350px;
+        max-width: 100%;
+        max-height: 190px;
+        margin: 10px 10px 10px 10px;
+
+    }
+
+
+
+    .image {
+        width: 355px;
+        height: 190px;
+    }
+
+    .contitle {
+        padding-top: 10px;
+    }
+
+    .titles .title {
+        font-size: 16px;
+    }
+
+    .slider {
+        width: 355px;
+        height: 190px;
+    }
+
+
+    .contitle {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    .controls {
+        margin: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 30px;
+    }
+
+    .titles {
+        font-size: 16px;
+        margin-top: 60px;
+    }
+
+
+
+
+}
