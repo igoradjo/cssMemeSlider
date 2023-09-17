@@ -29,53 +29,65 @@ body {
     height: 350px;
 }
 
-.wrapper .controls {
-    left: 80%;
+.controls {
+    left: 70%;
     margin-left: -100px;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
-.wrapper label {
+.ctrl1 {
     cursor: pointer;
-    display: inline-block;
-    height: 15px;
-    margin: 25px 12px 0 16px;
+    height: 26px;
+    width: 26px;
     position: relative;
-    width: 15px;
-    border-radius: 50%;
-
+    margin: 0 5px;
 }
 
-.wrapper label:after {
-    border: 2px solid dodgerblue;
-    content: " ";
+.ctrl {
+    background: dodgerblue;
+    border-radius: 50%;
+    cursor: pointer;
     display: block;
-    height: 12px;
-    left: 0;
+    height: 16px;
+    width: 16px;
+    border: none;
     position: absolute;
     top: 0;
-    width: 12px;
-    border-radius: 50%;
+    left: 0;
+    transition: background-color 0.3s;
 }
 
-.wrapper label:hover {
-    background: dodgerblue;
-    background-color: dodgerblue;
-    color: dodgerblue;
+.ctrl1:hover .ctrl {
+    background-color: white;
+    opacity: 1;
 }
 
+.ctrl1:hover {
+    background-color: transparent;
+}
 
+.ctrl1:hover .ctrl {
+    background-color: white;
+    opacity: 1;
+}
 
+.ctrl1:active .ctrl {
+    opacity: 0;
+}
 
 .slides {
     height: inherit;
     position: absolute;
     width: inherit;
     z-index: 0;
-
+    opacity: 0;
+    transition: opacity 2s;
 }
 
-/* Стили для первого слайда */
 #slide1:checked~.slider>.slide1,
 #slide2:checked~.slider>.slide2,
 #slide3:checked~.slider>.slide3,
@@ -85,9 +97,7 @@ body {
     visibility: visible;
     z-index: 1;
     transform: scale(1);
-    transition: opacity 0.5s;
 }
-
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -96,17 +106,18 @@ input[type="checkbox"] {
     appearance: none;
 }
 
-
-
 .titles {
     display: none;
-
     font-size: 20px;
     font-weight: 700;
     color: dodgerblue;
     text-align: left;
     padding-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
+
+
 
 #slide1:checked~.contitle .titles.title1,
 #slide2:checked~.contitle .titles.title2,
@@ -114,6 +125,19 @@ input[type="checkbox"] {
 #slide4:checked~.contitle .titles.title4,
 #slide5:checked~.contitle .titles.title5 {
     display: block;
+    opacity: 1;
+    animation: fadein 1s;
+    /* Показываем текст с плавным появлением */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .contitle {
@@ -122,5 +146,4 @@ input[type="checkbox"] {
 
 .titles {
     flex: 1;
-    /* Занимает доступное пространство слева от кнопок */
 }
