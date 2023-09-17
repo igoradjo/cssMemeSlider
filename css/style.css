@@ -150,21 +150,21 @@ input[type="checkbox"] {
 
 
 
-@media (max-width: 390px) {
+@media (max-width: 376px) {
 
     .wrapper {
         width: 350px;
         max-width: 100%;
-        max-height: 185px;
-        margin: 20px 20px 20px 20px;
-        padding: 10px;
+        max-height: 190px;
+        margin: 10px 10px 10px 10px;
+
     }
 
 
 
     .image {
-        width: 370px;
-        height: 185px;
+        width: 355px;
+        height: 190px;
     }
 
     .contitle {
@@ -176,8 +176,8 @@ input[type="checkbox"] {
     }
 
     .slider {
-        width: 370px;
-        height: 185px;
+        width: 355px;
+        height: 190px;
     }
 
 
@@ -193,11 +193,12 @@ input[type="checkbox"] {
         margin: 0;
         left: 50%;
         transform: translateX(-50%);
+        padding-top: 30px;
     }
 
     .titles {
         font-size: 16px;
-        margin-top: 30px;
+        margin-top: 60px;
     }
 
 
