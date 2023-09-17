@@ -24,6 +24,11 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
+.image {
+    width: 700px;
+    height: 350px;
+}
+
 .wrapper .controls {
     left: 80%;
     margin-left: -100px;
